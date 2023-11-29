@@ -14,7 +14,7 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 option(BUILD_SHARED_LIBS "Build shared libraries" OFF)
 
 # Define an option to choose between static and shared GLEW library (default is static)
-option(USE_GLEW_STATIC "Use static GLEW library" ON)
+# option(USE_GLEW_STATIC "Use static GLEW library" ON)
 
 # Include FetchContent module for managing external dependencies
 include(FetchContent)
@@ -44,15 +44,18 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable( glm )
 
-# Fetch and declare GLEW as an external dependency
+# Fetch and declare GLAD as an external dependency
 FetchContent_Declare(
-    glew
-    GIT_REPOSITORY https://github.com/Perlmint/glew-cmake.git
+    glad
+    GIT_REPOSITORY https://github.com/Dav1dde/glad.git
     GIT_TAG        origin/master
     GIT_SHALLOW TRUE
     GIT_PROGRESS TRUE
 )
-FetchContent_MakeAvailable( glew )
+
+FetchContent_MakeAvailable( glad )
+
+FetchContent_GetProperties(glad)
 
 # Debug info on where the binary directory is
 message(STATUS "Binary directory: ${CMAKE_BINARY_DIR}")
@@ -61,11 +64,13 @@ message(STATUS "Binary directory: ${CMAKE_BINARY_DIR}")
 add_executable(${projectName} src/main.cpp)
 
 # Link the executable against glfw, glm, and glew libraries based on the selected option
-if(USE_GLEW_STATIC)
-    target_link_libraries(${projectName} PRIVATE glfw glm::glm libglew_static)
-else()
-    target_link_libraries(${projectName} PRIVATE glfw glm::glm libglew_shared)
-endif()
+#if(USE_GLEW_STATIC)
+#    target_link_libraries(${projectName} PRIVATE glfw glm::glm libglew_static)
+#else()
+#    target_link_libraries(${projectName} PRIVATE glfw glm::glm libglew_shared)
+#endif()
+
+target_link_libraries(${projectName} PRIVATE glfw glm::glm glad)
 
 # Set the C++ standard to C++17 for the "flappy" target
 target_compile_features(${projectName} PRIVATE cxx_std_17)
