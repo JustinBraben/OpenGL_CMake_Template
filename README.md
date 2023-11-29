@@ -1,12 +1,14 @@
+[![Build Status](https://github.com/JustinBraben/OpenGL_CMake_Template/actions/workflows/ci/badge.svg)](https://github.com/JustinBraben/OpenGL_CMake_Template/actions)
+
 # OpenGL C++ Project Template
 
-This repository serves as a template for kickstarting a new OpenGL project using modern C++ and popular libraries like GLFW, GLM, and GLEW. The template utilizes CMake for project configuration and GitHub Actions for building on multiple platforms.
+This repository serves as a template for kickstarting a new OpenGL project using modern C++ and popular libraries like GLFW, GLM, and GLAD. The template utilizes CMake for project configuration and GitHub Actions for building on multiple platforms.
 
 ## Features
 
 - **CMake Configuration:** The project is set up with CMake, providing a flexible and cross-platform build system. You can easily configure and extend the project using CMake.
 
-- **GLFW, GLM, and GLEW:** The template includes CMake's `FetchContent` to automatically download and integrate GLFW, GLM, and GLEW into your project. These libraries are fundamental for OpenGL development.
+- **GLFW, GLM, and GLAD:** The template includes CMake's `FetchContent` to automatically download and integrate GLFW, GLM, and GLAD into your project. These libraries are fundamental for OpenGL development.
 
 - **Modern C++:** The project is structured to encourage modern C++ practices. Feel free to use features from C++11 and beyond to write clean and efficient code.
 
