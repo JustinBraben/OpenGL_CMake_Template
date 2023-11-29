@@ -1,4 +1,4 @@
-[![Build Status](https://github.com/JustinBraben/OpenGL_CMake_Template/actions/workflows/ci/badge.svg)](https://github.com/JustinBraben/OpenGL_CMake_Template/actions)
+[![Build Status](https://github.com/JustinBraben/OpenGL_CMake_Template/actions/workflows/ci.yml/badge.svg)](https://github.com/JustinBraben/OpenGL_CMake_Template/actions)
 
 # OpenGL C++ Project Template
 
