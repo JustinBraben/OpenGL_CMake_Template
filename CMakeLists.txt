@@ -55,7 +55,7 @@ FetchContent_Declare(
 
 FetchContent_MakeAvailable( glad )
 
-FetchContent_GetProperties(glad)
+FetchContent_GetProperties( glad )
 
 # Debug info on where the binary directory is
 message(STATUS "Binary directory: ${CMAKE_BINARY_DIR}")
