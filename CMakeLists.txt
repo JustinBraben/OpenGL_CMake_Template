@@ -2,10 +2,17 @@
 cmake_minimum_required(VERSION 3.16)
 
 # Set the variable projectName to what you want your project to be called
-set(projectName "OpenGL_CMake_Template")
+set(projectName "myproject")
 
 # Declare the project with the specified language (C++)
-project(${projectName} LANGUAGES CXX)
+#project(${projectName} LANGUAGES CXX)
+
+project(
+  myproject
+  VERSION 0.0.1
+  DESCRIPTION ""
+  HOMEPAGE_URL "%%myurl%%"
+  LANGUAGES CXX C)
 
 # Set the output directory for executables to bin/
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
@@ -75,5 +82,5 @@ target_link_libraries(${projectName} PRIVATE glfw glm::glm glad)
 # Set the C++ standard to C++17 for the "flappy" target
 target_compile_features(${projectName} PRIVATE cxx_std_17)
 
-# Install the "flappy" target
+# Install the target
 install(TARGETS ${projectName})
